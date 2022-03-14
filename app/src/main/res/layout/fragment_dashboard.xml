@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingLeft="35dp"
+    android:paddingRight="20dp"
+    tools:context=".ui.dashboard.DashboardFragment">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/logobrain"
+    />
+
+
+    <TextView
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="sans-serif-condensed"
+        android:textColor="@color/colorAccent"
+        android:text="What do you want to remember to do?"
+        android:textStyle="italic"
+        />
+
+    <EditText
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:layout_marginTop="10dp"
+        android:hint="Take my pill"
+        android:id="@+id/to_do"
+    />
+
+    <TextView
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="sans-serif-condensed"
+        android:textColor="@color/colorAccent"
+        android:text="When do you want to do it?"
+        android:textStyle="italic"
+    />
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        >
+
+
+        <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:fontFamily="sans-serif-light"
+                android:textColor="@color/black"
+                android:text="Monday"
+            />
+
+            <CheckBox
+              android:layout_width="wrap_content"
+              android:layout_marginStart="100dp"
+              android:layout_height="25dp"
+              android:id="@+id/check_monday"
+            />
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:fontFamily="sans-serif-light"
+                android:textColor="@color/black"
+                android:text="Tuesday"
+                />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_marginStart="100dp"
+                android:layout_height="25dp"
+                android:id="@+id/check_tuesday"
+                />
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:fontFamily="sans-serif-light"
+                android:textColor="@color/black"
+                android:text="Wednesday"
+                />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_marginStart="100dp"
+                android:layout_height="25dp"
+                android:id="@+id/check_wednesday"
+                />
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:fontFamily="sans-serif-light"
+                android:textColor="@color/black"
+                android:text="Thursday"
+                />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_marginStart="100dp"
+                android:layout_height="25dp"
+                android:id="@+id/check_thursday"
+                />
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:fontFamily="sans-serif-light"
+                android:textColor="@color/black"
+                android:text="Friday"
+                />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_marginStart="100dp"
+                android:layout_height="25dp"
+                android:id="@+id/check_friday"
+                />
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:fontFamily="sans-serif-light"
+                android:textColor="@color/black"
+                android:text="Saturday"
+                />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_marginStart="100dp"
+                android:layout_height="25dp"
+                android:id="@+id/check_saturday"
+                />
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:fontFamily="sans-serif-light"
+                android:textColor="@color/black"
+                android:text="Sunday"
+                />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_marginStart="100dp"
+                android:layout_height="25dp"
+                android:id="@+id/check_sunday"
+                />
+        </TableRow>
+
+    </TableLayout>
+
+    <TextView
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="sans-serif-condensed"
+        android:textColor="@color/colorAccent"
+        android:text="At what time?"
+        android:textStyle="italic"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Set Time"
+        android:id="@+id/btn_time"
+        android:background="@drawable/button"
+    />
+
+    <Button
+        android:layout_marginTop="20dp"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Add"
+        android:id="@+id/btn_add"
+        android:textColor="@color/white"
+        android:background="@drawable/button"
+        />
+
+
+</LinearLayout>
