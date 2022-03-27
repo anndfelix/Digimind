@@ -8,10 +8,11 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.CheckBox
 import android.widget.EditText
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import felix.andrea.mydigimind.R
-import felix.andrea.mydigimind.Recordatorio
+import felix.andrea.mydigimind.Task
 import felix.andrea.mydigimind.databinding.FragmentDashboardBinding
 import felix.andrea.mydigimind.ui.home.HomeFragment
 import java.text.SimpleDateFormat
@@ -22,8 +23,6 @@ class DashboardFragment : Fragment() {
     private lateinit var dashboardViewModel: DashboardViewModel
     private var _binding: FragmentDashboardBinding? = null
 
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -38,6 +37,15 @@ class DashboardFragment : Fragment() {
 
         val root: View = binding.root
         val btnSetTime: Button = root.findViewById(R.id.btn_time) as Button
+        val btnAdd = root.findViewById(R.id.btn_add) as Button
+        val toDo = root.findViewById(R.id.to_do) as EditText
+        val check_monday = root.findViewById(R.id.check_monday) as CheckBox
+        val check_tuesday = root.findViewById(R.id.check_tuesday) as CheckBox
+        val check_wednesday = root.findViewById(R.id.check_wednesday) as CheckBox
+        val check_thursday = root.findViewById(R.id.check_thursday) as CheckBox
+        val check_friday = root.findViewById(R.id.check_friday) as CheckBox
+        val check_saturday = root.findViewById(R.id.check_saturday) as CheckBox
+        val check_sunday = root.findViewById(R.id.check_sunday) as CheckBox
 
         btnSetTime.setOnClickListener(){
             val cal = Calendar.getInstance()
@@ -50,16 +58,6 @@ class DashboardFragment : Fragment() {
             TimePickerDialog(root.context,timeSetListener,cal.get(Calendar.HOUR_OF_DAY),
                 cal.get(Calendar.MINUTE),true).show()
         }
-
-        val btnAdd = root.findViewById(R.id.btn_add) as Button
-        val toDo = root.findViewById(R.id.to_do) as EditText
-        val check_monday = root.findViewById(R.id.check_monday) as CheckBox
-        val check_tuesday = root.findViewById(R.id.check_tuesday) as CheckBox
-        val check_wednesday = root.findViewById(R.id.check_wednesday) as CheckBox
-        val check_thursday = root.findViewById(R.id.check_thursday) as CheckBox
-        val check_friday = root.findViewById(R.id.check_friday) as CheckBox
-        val check_saturday = root.findViewById(R.id.check_saturday) as CheckBox
-        val check_sunday = root.findViewById(R.id.check_sunday) as CheckBox
 
         btnAdd.setOnClickListener{
             var descriptionToDo = toDo.text.toString()
@@ -88,9 +86,10 @@ class DashboardFragment : Fragment() {
                 days.add("Sunday")
             }
 
-            var recordatorio = Recordatorio(days,time,descriptionToDo)
+            var recordatorio = Task(days,time,descriptionToDo)
 
-            HomeFragment.recordatorios.add(recordatorio)
+            HomeFragment.tasks.add(recordatorio)
+            Toast.makeText(root.context,"New task added",Toast.LENGTH_SHORT).show()
 
         }
 
