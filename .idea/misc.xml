@@ -5,12 +5,14 @@
       <map>
         <entry key="..\:/Users/Andrea/AndroidStudioProjects/MyDigimind/app/src/main/res/drawable/button.xml" value="0.1" />
         <entry key="..\:/Users/Andrea/AndroidStudioProjects/MyDigimind/app/src/main/res/drawable/dashboard_item.xml" value="0.1985" />
+        <entry key="..\:/Users/Andrea/AndroidStudioProjects/MyDigimind/app/src/main/res/drawable/fondo.xml" value="0.1" />
         <entry key="..\:/Users/Andrea/AndroidStudioProjects/MyDigimind/app/src/main/res/drawable/ic_dashboard_black_24dp.xml" value="0.1" />
         <entry key="..\:/Users/Andrea/AndroidStudioProjects/MyDigimind/app/src/main/res/layout/activity_main.xml" value="0.18" />
         <entry key="..\:/Users/Andrea/AndroidStudioProjects/MyDigimind/app/src/main/res/layout/dashboard_item.xml" value="0.4896030245746692" />
         <entry key="..\:/Users/Andrea/AndroidStudioProjects/MyDigimind/app/src/main/res/layout/fragment_dashboard.xml" value="0.22183098591549297" />
         <entry key="..\:/Users/Andrea/AndroidStudioProjects/MyDigimind/app/src/main/res/layout/fragment_home.xml" value="0.1" />
         <entry key="..\:/Users/Andrea/AndroidStudioProjects/MyDigimind/app/src/main/res/layout/fragment_notifications.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Andrea/AndroidStudioProjects/MyDigimind/app/src/main/res/layout/task_view.xml" value="0.1636271529888551" />
         <entry key="..\:/Users/Andrea/AndroidStudioProjects/MyDigimind/app/src/main/res/menu/bottom_nav_menu.xml" value="0.36666666666666664" />
       </map>
     </option>

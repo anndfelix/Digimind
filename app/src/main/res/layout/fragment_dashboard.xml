@@ -197,9 +197,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
+        android:textSize="10dp"
         android:text="Set Time"
         android:id="@+id/btn_time"
-        android:background="@drawable/button"
     />
 
     <Button
@@ -207,10 +207,9 @@
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="Add"
+        android:text="Done"
         android:id="@+id/btn_add"
         android:textColor="@color/white"
-        android:background="@drawable/button"
         />
 
 
