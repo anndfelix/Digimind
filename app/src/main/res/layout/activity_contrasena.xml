@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingLeft="35dp"
+    android:paddingRight="20dp"
+    tools:context=".ui.home.HomeFragment">
+
+    <ImageView
+        android:layout_marginTop="40dp"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/logobrain"
+        />
+
+    <EditText
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:hint="Correo electronico"
+        android:layout_marginTop="50dp"
+        android:id="@+id/correoElectronico"
+        />
+
+    <Button
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="100dp"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="Restablecer"
+        android:id="@+id/btn_restablecer"
+        android:textColor="@color/white"
+        android:layout_marginRight="50dp"
+        />
+
+    <TextView
+        android:text="Iniciar sesion"
+        android:layout_marginTop="30dp"
+        android:layout_width="match_parent"
+        android:textAlignment="center"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorAccent"
+        android:id="@+id/tv_iniciarSesion"
+        />
+
+</LinearLayout>

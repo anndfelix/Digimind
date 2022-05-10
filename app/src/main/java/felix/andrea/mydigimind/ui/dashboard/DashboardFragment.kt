@@ -1,7 +1,9 @@
 package felix.andrea.mydigimind.ui.dashboard
 
 import android.app.TimePickerDialog
+import android.content.ContentValues.TAG
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,6 +13,8 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 import felix.andrea.mydigimind.R
 import felix.andrea.mydigimind.Task
 import felix.andrea.mydigimind.databinding.FragmentDashboardBinding
@@ -22,6 +26,8 @@ class DashboardFragment : Fragment() {
 
     private lateinit var dashboardViewModel: DashboardViewModel
     private var _binding: FragmentDashboardBinding? = null
+
+    val fs = Firebase.firestore
 
     private val binding get() = _binding!!
 
@@ -86,10 +92,22 @@ class DashboardFragment : Fragment() {
                 days.add("Sunday")
             }
 
-            var recordatorio = Task(days,time,descriptionToDo)
+            if (!time.isBlank() && !time.isEmpty() && time != "Set Time" && time != "Set time") {
 
-            HomeFragment.tasks.add(recordatorio)
-            Toast.makeText(root.context,"New task added",Toast.LENGTH_SHORT).show()
+                var recordatorio = Task(days,time,descriptionToDo)
+
+                fs.collection("actividades").add(recordatorio)
+                    .addOnSuccessListener { documentReference ->
+                        Log.d(TAG, "DocumentSnapshot added with ID: ${documentReference.id}")
+                    }
+                    .addOnFailureListener { e ->
+                        Log.w(TAG,  "Error adding document", e)
+                    }
+
+                Toast.makeText(root.context, "New Task Added", Toast.LENGTH_SHORT).show()
+            } else {
+                Toast.makeText(root.context, "Select time", Toast.LENGTH_SHORT).show()
+            }
 
         }
 

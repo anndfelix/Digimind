@@ -12,9 +12,11 @@ import android.widget.GridView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.google.firebase.ktx.Firebase
 import felix.andrea.mydigimind.R
 import felix.andrea.mydigimind.Task
 import felix.andrea.mydigimind.databinding.FragmentHomeBinding
+import com.google.firebase.firestore.ktx.firestore
 
 class HomeFragment : Fragment() {
 
@@ -22,6 +24,8 @@ class HomeFragment : Fragment() {
         var tasks = ArrayList<Task>()
         var first = true
     }
+
+    val fs = Firebase.firestore
 
     var adaptador: TaskAdapter? = null
     private var _binding: FragmentHomeBinding? = null
@@ -39,26 +43,22 @@ class HomeFragment : Fragment() {
         val root: View = binding.root
 
         if(first){
-            fillTasks()
             first= false
+        }
+
+        fs.collection("actividades").get().addOnSuccessListener { documents ->
+            for(document in documents){
+                if(!tasks.contains(document.toObject(Task::class.java))){
+                    tasks.add(document.toObject(Task::class.java))
+                }
+            }
         }
 
         adaptador = TaskAdapter(root.context, tasks)
         val table : GridView = root.findViewById(R.id.gridView)
         table.adapter = adaptador
-
         return root
     }
-
-        fun fillTasks(){
-            tasks.add(Task( arrayListOf("Tuesday"), "17:30","Practice 1"))
-            tasks.add(Task( arrayListOf("Monday","Saturday"), "17:00","Practice 2"))
-            tasks.add(Task( arrayListOf("Wednesday"), "14:00","Practice 3"))
-            tasks.add(Task( arrayListOf("Saturday"), "11:00","Practice 4"))
-            tasks.add(Task( arrayListOf("Friday"), "13:00","Practice 5"))
-            tasks.add(Task( arrayListOf("Thursday"), "10:40","Practice 6"))
-            tasks.add(Task( arrayListOf("Monday"), "12:00","Practice 7"))
-        }
 
     }
 
